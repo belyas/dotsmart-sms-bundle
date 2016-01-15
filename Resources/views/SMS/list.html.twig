@@ -1,0 +1,35 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<style type="text/css">
+	table {width: 100%;}
+	table td, table th {border: 1px solid #000;text-align: center;}
+</style>
+<center>
+	<h2>Liste des sms envoye</h2>
+	<table border="0" cellspacing="0">
+		<tr>
+			<th>Etat/Code</th>
+			<th>User</th>
+			<th>Numero</th>
+			<th>Message</th>
+			<th>Prix</th>
+			<th>ID Compagne</th>
+			<th>ID SMS</th>
+			<th>Date SMS</th>
+		</tr>
+		{% for sms in getSms %}
+			<tr>
+				<td>{{ sms.state ~"/"~ sms.code }}</td>
+				<td>Yassine</td>
+				<td>{{ sms.number }}</td>
+				<td>{{ sms.message }}</td>
+				<td>{{ sms.price }}</td>
+				<td>{{ sms.idCampagne }}</td>
+				<td>{{ sms.idSms }}</td>
+				<td>{{ sms.dateProg|date('d/m/Y') }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+</center>
+{% endblock %}

@@ -1,0 +1,12 @@
+services:
+    dot_smart_sms.sender_factory:
+        class: DotSmart\SmsBundle\Factory\SenderFactory
+        arguments: [@service_container]
+
+    dot_smart_sms.persister_factory:
+        class: DotSmart\SmsBundle\Factory\DataPersister
+        arguments: [@doctrine.orm.entity_manager]
+
+    dot_smart_sms.send_sms:
+        class: DotSmart\SmsBundle\Services\SendSmsService
+        arguments: [@dot_smart_sms.sender_factory, @dot_smart_sms.persister_factory]

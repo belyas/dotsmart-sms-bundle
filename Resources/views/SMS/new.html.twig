@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<center>
+<h2>Envoyer un sms</h2>
+<form accept="utf-8" method="post" action="{{ path('sms_send') }}">
+	<table border="0" width="600px">
+		<tr>
+			<td>Votre numéro: </td>
+			<td>{{ form_widget(form.number) }}</td>
+		</tr>
+		<tr>
+			<td>Votre designation: </td>
+			<td>{{ form_widget(form.designation) }}</td>
+		</tr>
+		<tr>
+			<td>Votre message: </td>
+			<td>{{ form_widget(form.message) }}</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="right">{{ form_widget(form.send) }}</td>
+		</tr>
+	</table>
+</form>
+</center>
+{% endblock %}
