@@ -12,10 +12,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3.9",
-        "symfony/framework-bundle": ">=2.7.*"
-    },
-    "require-dev": {
+        "php": ">=5.3.9"
     },
     "autoload": {
         "psr-0": { "DotSmart\\SmsBundle": "" }
