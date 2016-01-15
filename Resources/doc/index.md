@@ -90,7 +90,7 @@ public function sendSmsAction()
 {
     $smsSenderService = $this->get('dot_smart_sms.send_sms');
     $result = $smsSenderService->send(array(
-        'numbers' => '212630892776',
+        'numbers' => '12345678902',
         'message' => 'Hello world',
         'designation' => 'Something here',
     ));
